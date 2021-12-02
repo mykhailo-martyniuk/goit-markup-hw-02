@@ -4,9 +4,13 @@
   --background-color-gray_light: #f5f4fa;
   --text-color-black: #212121;
   --text-color-grey: #757575;
-  --box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
   --border-color: #eeeeee;
+  /*--section-padding: 94px 13.4375%;*/
+  --section-padding: 94px 10%;
+  --box-shadow-team: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  --border-projects-width: 1px;
+  --border-projects_item: var(--border-projects-width) solid var(--border-color);
   --button-hover-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
     0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -31,6 +35,11 @@ body {
 .container {
 }
 
+.header {
+  padding: 24px 215px;
+  border-bottom: 1px solid #ececec;
+}
+
 .main {
   margin: 0;
   padding: 0;
@@ -41,7 +50,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   font-size: 26px;
-  line-height: 36px;
+  line-height: 31px;
   letter-spacing: 0.03em;
   color: var(--text-color-black);
 }
@@ -50,9 +59,20 @@ body {
   color: var(--brand-color);
 }
 
+.nav {
+  display: inline-block;
+}
+
 .nav__list {
-  list-style-type: none;
+  display: inline-block;
+  margin: 0;
   padding: 0;
+
+  list-style-type: none;
+}
+
+.nav__list-item {
+  display: inline-block;
 }
 
 .nav__link {
@@ -65,13 +85,21 @@ body {
 }
 
 .nav__link:hover,
-.nav__link:focus {
+.nav__link:focus,
+.nav__link:active {
+  color: var(--brand-color);
+}
+
+.nav__link--current {
   color: var(--brand-color);
 }
 
 .contacts {
-  list-style-type: none;
+  display: inline-block;
+  margin: 0;
   padding: 0;
+
+  list-style-type: none;
 }
 
 .contacts_item {
@@ -83,16 +111,22 @@ body {
   letter-spacing: 0.02em;
 }
 
+.contacts_item:hover,
+.contacts_item:focus,
+.contacts_item:active {
+  color: var(--brand-color);
+}
+
 .section {
-  /*padding-left: 200px;*/
-  /*padding-right: 200px;*/
-  padding: 94px 200px;
+  padding: var(--section-padding);
   margin: 0;
 }
 
 .section-h1 {
   padding-top: 200px;
   padding-bottom: 200px;
+
+  text-align: center;
 }
 
 .section--bottom-p-zero {
@@ -108,7 +142,8 @@ body {
 }
 
 .section__title {
-  margin: 0;
+  display: block;
+  margin: 0 0 50px 0;
 
   font-weight: 700;
   font-size: 36px;
@@ -119,6 +154,7 @@ body {
 
 .section__title-bigger {
   max-width: 700px;
+  margin: 0 0 30px 0;
 
   font-weight: 900;
   font-size: 44px;
@@ -139,35 +175,52 @@ body {
 
   background: var(--background-color-gray_light);
   border-radius: 4px;
-  box-shadow: var(--button-hover-shadow);
   border: none;
 }
 
-.button:hover {
-  background: var(--brand-color);
+.button:hover,
+.button:focus,
+button:active {
   color: #fff;
+
+  box-shadow: var(--button-hover-shadow);
+  background: var(--brand-color);
 }
 
-.button--blue {
+.button--blue,
+.button--current {
   background-color: var(--brand-color);
   color: #fff;
 }
 
-.button--blue:hover {
-  background-color: var(--background-color-gray_light);
+.button--blue:hover,
+button--blue:focus,
+button--blue:active {
   color: var(--text-color-black);
+  background-color: var(--background-color-gray_light);
+}
+
+.button__order {
+  max-width: 200px;
+  min-width: 130px;
+  height: 50px;
+  width: 100%;
 }
 
 .advantages {
   list-style-type: none;
+  margin: 0;
   padding: 0;
 }
 
 .advantages__item {
+  display: inline-block;
   max-width: 270px;
 }
 
 .advantages__title {
+  margin: 0;
+
   font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.03em;
@@ -175,6 +228,9 @@ body {
 }
 
 .advantages__desc {
+  margin: 10px 0 0 0;
+  min-height: 75px;
+
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
@@ -184,12 +240,21 @@ body {
 .doings {
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  font-size: 0;
+  /*font-size: 0; needs to remove extra 4px from the bottom*/
 }
 
 .doings__item {
+  display: inline-block;
+}
+
+.doings__item:not(:last-child) {
+  margin-right: 30px;
 }
 
 .doings__img {
+  display: block;
   width: 370px;
   height: 294px;
 }
@@ -198,21 +263,31 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
+
+  font-size: 0;
 }
 
 .team__item {
   display: inline-block;
+  padding: 0 0 30px 0;
 
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-team);
   border-radius: 0 0 4px 4px;
 }
 
+.team__item:not(:last-child) {
+  margin-right: 30px;
+}
+
 .team_img {
+  display: block;
   width: 270px;
   height: 260px;
 }
 
 .team__title {
+  margin: 30px 0 10px 0;
+
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
@@ -221,6 +296,8 @@ body {
 }
 
 .team_desc {
+  margin: 0;
+
   font-size: 16px;
   line-height: 19px;
   text-align: center;
@@ -234,18 +311,89 @@ body {
 }
 
 .address {
+  margin-top: 20px;
 }
+
 .address__list {
   list-style-type: none;
   padding: 0;
+  margin: 0;
 }
-.address__item:not(last-child){
+
+.address__item:not(:last-child) {
   margin-bottom: 9px;
 }
+
+.address__item {
+  min-height: 21px;
+}
+
 .address__contact {
   text-decoration: none;
   color: var(--text-color-grey);
 }
+
 .address__contact--white {
   color: #fff;
+}
+
+.filter-buttons {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  text-align: center;
+  font-size: 0;
+}
+
+.filter-buttons__item {
+  display: inline-block;
+}
+
+.filter-buttons__item:not(:last-child) {
+  margin-right: 8px;
+}
+
+.project-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0 0 0;
+  font-size: 0;
+}
+
+.project-list__item {
+  display: inline-block;
+  margin-top: 30px;
+  padding-bottom: calc(20px - var(--border-projects-width));
+  max-width: calc(370px - var(--border-projects-width) * 2);
+
+  border: var(--border-projects_item);
+}
+
+.project-list__item:not(:last-child){
+  margin-right: 30px;
+}
+
+.project-list__title {
+  margin: 20px 24px 4px 24px;
+
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 0.06em;
+  color: var(--text-color-black);
+}
+
+.project-list__img {
+  display: block;
+  width: calc(370px - var(--border-projects-width) * 2);
+  height: 294px;
+}
+
+.project-list__desc {
+  margin: 0 24px 0 24px;
+
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.03em;
+  color: var(--text-color-grey);
 }

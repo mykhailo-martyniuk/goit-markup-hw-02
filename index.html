@@ -16,9 +16,15 @@
         <nav class="nav">
           <a class="logo" href="#"><span class="logo_fword">Web</span>Studio</a>
           <ul class="nav__list">
-            <li><a class="nav__link" href="#"> Студия </a></li>
-            <li><a class="nav__link" href="portfolio.html"> Портфолио </a></li>
-            <li><a class="nav__link" href="#"> Контакты </a></li>
+            <li class="nav__list-item">
+              <a class="nav__link nav__link--current" href="#"> Студия </a>
+            </li>
+            <li class="nav__list-item">
+              <a class="nav__link" href="portfolio.html"> Портфолио </a>
+            </li>
+            <li class="nav__list-item">
+              <a class="nav__link" href="#"> Контакты </a>
+            </li>
           </ul>
         </nav>
         <ul class="contacts">
@@ -39,7 +45,7 @@
           <h1 class="section__title section__title-bigger">
             Эфективные решения для вашего бизнеса
           </h1>
-          <button class="button button--blue" type="button">
+          <button class="button button__order button--blue" type="button">
             Заказать услугу
           </button>
         </div>
@@ -88,15 +94,13 @@
               src="images/workProgramer.jpg"
               alt="програмист пишет код"
             />
-          </li>
-          <li class="doings__item">
+          </li><li class="doings__item">
             <img
               class="doings__img"
               src="images/workDesigner.jpg"
               alt="ui дизайнер делает интерфейс для мобильного приложения"
             />
-          </li>
-          <li class="doings__item">
+          </li><li class="doings__item">
             <img
               class="doings__img"
               src="images/workArtist.jpg"
@@ -113,7 +117,6 @@
               class="team_img"
               src="images/person1.jpg"
               alt="мужчина: в очках, короткая стрижка, борода, темные волосы, бордовая рубашка"
-
             />
             <h3 class="team__title">Игорь Демьяненко</h3>
             <p class="team_desc">Product Designer</p>
@@ -123,7 +126,6 @@
               class="team_img"
               src="images/person2.jpg"
               alt="женщина: блондинка, в очках, в черном пиджаке"
-
             />
             <h3 class="team__title">Ольга Репина</h3>
             <p class="team_desc">Frontend Developer</p>
@@ -133,7 +135,6 @@
               class="team_img"
               src="images/person3.jpg"
               alt="мужчина: короткая стрижка, длинная щетина, темные волосы, белая рубашка"
-
             />
             <h3 class="team__title">Николай Тарасов</h3>
             <p class="team_desc">Marketing</p>
@@ -143,7 +144,6 @@
               class="team_img"
               src="images/person4.jpg"
               alt="мужчина: короткая стрижка, борода, темные волосы, черная футболка"
-
             />
             <h3 class="team__title">Михаил Ермаков</h3>
             <p class="team_desc">UI Designer</p>
@@ -158,15 +158,23 @@
           <ul class="address__list">
             <li class="address__item">
               <a
-                      class="address__contact address__contact--white"
+                class="address__contact address__contact--white"
                 href="https://www.google.com/maps/search/?api=1&query=Киев+Леси+Украинки+26"
                 target="_blank"
                 rel="noopener noreferrer"
                 >г. Киев, пр-т Леси Украинки, 26</a
               >
             </li>
-            <li class="address__item"><a class="address__contact" href="mailto:info@devstudio.com">info@devstudio.com</a></li>
-            <li class="address__item"><a class="address__contact" href="tel:+380961111111">+38 096 111 11 11</a></li>
+            <li class="address__item">
+              <a class="address__contact" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+            <li class="address__item">
+              <a class="address__contact" href="tel:+380961111111"
+                >+38 096 111 11 11</a
+              >
+            </li>
           </ul>
         </address>
       </div>
