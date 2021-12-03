@@ -4,9 +4,10 @@
   --background-color-gray_light: #f5f4fa;
   --text-color-black: #212121;
   --text-color-grey: #757575;
+  --color-white: #fff;
   --border-color: #eeeeee;
   /*--section-padding: 94px 13.4375%;*/
-  --section-padding: 94px 10%;
+  --section-padding: 94px 0;
   --box-shadow-team: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   --border-projects-width: 1px;
@@ -33,10 +34,12 @@ body {
 }
 
 .container {
+  width: 1200px;
+  margin: auto;
 }
 
 .header {
-  padding: 24px 215px;
+  padding: 24px 0;
   border-bottom: 1px solid #ececec;
 }
 
@@ -57,6 +60,10 @@ body {
 
 .logo_fword {
   color: var(--brand-color);
+}
+
+.logo--white {
+  color: var(--color-white);
 }
 
 .nav {
@@ -119,13 +126,10 @@ body {
 
 .section {
   padding: var(--section-padding);
-  margin: 0;
 }
 
 .section-h1 {
-  padding-top: 200px;
-  padding-bottom: 200px;
-
+  padding: 200px 0;
   text-align: center;
 }
 
@@ -154,14 +158,14 @@ body {
 
 .section__title-bigger {
   max-width: 700px;
-  margin: 0 0 30px 0;
+  margin: 0 auto 30px auto;
 
   font-weight: 900;
   font-size: 44px;
   line-height: 60px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .button {
@@ -181,7 +185,7 @@ body {
 .button:hover,
 .button:focus,
 button:active {
-  color: #fff;
+  color: var(--color-white);
 
   box-shadow: var(--button-hover-shadow);
   background: var(--brand-color);
@@ -190,21 +194,24 @@ button:active {
 .button--blue,
 .button--current {
   background-color: var(--brand-color);
-  color: #fff;
+  color: var(--color-white);
 }
 
 .button--blue:hover,
 .button--blue:focus,
 .button--blue:active {
-  color: var(--text-color-black);
+  color: var(--brand-color);
   background-color: var(--background-color-gray_light);
 }
 
 .button__order {
-  max-width: 200px;
-  min-width: 130px;
-  height: 50px;
-  width: 100%;
+  padding: 10px 32px;
+
+  line-height: 30px;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .advantages {
@@ -255,8 +262,7 @@ button:active {
 
 .doings__img {
   display: block;
-  width: 370px;
-  height: 294px;
+  max-width: 100%;
 }
 
 .team {
@@ -270,6 +276,7 @@ button:active {
 .team__item {
   display: inline-block;
   padding: 0 0 30px 0;
+  max-width: 270px;
 
   box-shadow: var(--box-shadow-team);
   border-radius: 0 0 4px 4px;
@@ -281,8 +288,7 @@ button:active {
 
 .team_img {
   display: block;
-  width: 270px;
-  height: 260px;
+  max-width: 100%;
 }
 
 .team__title {
@@ -306,12 +312,14 @@ button:active {
 }
 
 .footer {
-  padding: 60px 215px;
+  padding: 60px 0;
   background-color: var(--background-color-gray_dark);
 }
 
 .address {
   margin-top: 20px;
+
+  font-style: normal;
 }
 
 .address__list {
@@ -333,8 +341,10 @@ button:active {
   color: var(--text-color-grey);
 }
 
-.address__contact--white {
-  color: #fff;
+.address__contact:hover,
+.address__contact:active,
+.address__contact:focus {
+  color: var(--color-white);
 }
 
 .filter-buttons {
@@ -364,18 +374,24 @@ button:active {
 .project-list__item {
   display: inline-block;
   margin-top: 30px;
-  padding-bottom: calc(20px - var(--border-projects-width));
   max-width: calc(370px - var(--border-projects-width) * 2);
-
-  border: var(--border-projects_item);
 }
 
 .project-list__item:not(:last-child) {
   margin-right: 30px;
 }
 
+.project-list__bottom-container {
+  padding: 20px 24px;
+
+  border-right: var(--border-projects_item);
+  border-left: var(--border-projects_item);
+  border-bottom: var(--border-projects_item);
+}
+
 .project-list__title {
-  margin: 20px 24px 4px 24px;
+  margin-top: 0;
+  margin-bottom: 4px;
 
   font-size: 18px;
   line-height: 36px;
@@ -385,12 +401,11 @@ button:active {
 
 .project-list__img {
   display: block;
-  width: calc(370px - var(--border-projects-width) * 2);
-  height: 294px;
+  max-width: 100%;
 }
 
 .project-list__desc {
-  margin: 0 24px 0 24px;
+  margin: 0;
 
   font-size: 16px;
   line-height: 30px;
